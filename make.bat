@@ -6,7 +6,7 @@ set isquit=""
 (call )
 
 cls
-lualatex --interaction=nonstopmode --halt-on-error --shell-escape manual && biber manual
+lualatex --interaction=nonstopmode --halt-on-error --shell-escape manual
 
 echo.
 set /p isquit= "q to quit / enter to recompile: "

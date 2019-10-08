@@ -2,3 +2,92 @@
 % Copyright (c) 2019, zhiayang
 % Licensed under the Apache License Version 2.0.
 
+\documentclass[11pt]{article}
+
+\usepackage{commondoc}
+
+\usepackage{polyglossia}
+\setmainlanguage[variant=british]{english}
+
+\usepackage[style=authortitle,defernumbers=true,sorting=none,bibstyle=verbose,sortlocale=en-GB]{biblatex}
+\usepackage{bibentry}
+\usepackage{bytefield}
+
+\NewDocumentCommand{\bitboxunused}{ +m }{\bitbox{#1}{\color{gray}\rule{\width}{\height}}}
+\NewDocumentCommand{\bitboxempty} { +m }{\bitbox[]{#1}{\empty}}
+\bytefieldsetup{bitformatting={\ttfamily\small},boxformatting={\centering\ttfamily},leftcurly=.,curlyspace=0mm,labelspace=1em}
+\setminted{autogobble,style=colorful,tabsize=4}
+
+
+\title{The Flax Programming Language}
+
+\begin{document}
+\pagenumbering{gobble}
+
+\fancyhf[C]{}
+
+% title page
+\hypersetup{pageanchor=false}
+
+\begin{center}
+
+	\vspace*{5mm}
+
+	\begin{flushleft}\begin{spacing}{3.5}
+	\hugetext{\Roboto\fontsize{32pt}{48pt}\selectfont The Flax Programming Language}
+	\end{spacing}\end{flushleft}
+
+	\vspace*{30mm}
+
+	\texttt{\Huge <insert logo here>}
+	\vfill
+
+	\vspace*{30mm}
+
+	\linespread{1.0}
+	\begin{flushleft}\begin{table}[htb]\renewcommand{\arraystretch}{1.1}\fontsize{14pt}{20pt}\selectfont
+	\begin{tabu} to 0.8\textwidth { X[l,m] X[2,l,m] }
+		author  & zhiayang   \\
+		version & 0.41.1
+	\end{tabu}\end{table}\end{flushleft}
+
+	\vfill
+	{
+		\large
+		\itl{compiled}: \today  \\[0.6em]
+		\normalsize
+	}
+	\vspace*{20mm}
+
+\end{center}
+
+% end title
+
+\fancyhead{}
+\afterpage{\blankpage}
+
+\pagebreak
+
+\pagenumbering{roman}
+\fancyfoot{}
+\fancyfoot[C]{\thepage}
+
+\hypersetup{pageanchor=true}
+
+\tableofcontents
+\pagebreak
+
+% reset
+
+\pagenumbering{arabic}
+
+\input{"parts/Part 1 - Introduction"}
+% \input{"parts/Part 2 - Architecture"}
+% \input{"parts/Part 3 - Experimental Results"}
+% \input{"parts/Part 4 - Application Manual"}
+
+
+
+
+
+\end{document}

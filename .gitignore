@@ -11,7 +11,7 @@
 *.bcf
 *.blg
 *.run.xml
-_minted-report
+_minted-*
 .vscode
 *.nav
 *.snm
